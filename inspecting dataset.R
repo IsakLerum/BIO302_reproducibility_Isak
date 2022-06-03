@@ -24,12 +24,14 @@ richness_per_chrono_class <- ants |>
   count() |>
   filter(presence_absence == 1) |>
   group_by(forest_chrono_class) |>
-  summarise(richness_mean = mean(n), richness_sd = sd(n), nn = n(), forest_age)
+  summarise(richness_mean = mean(n), richness_sd = sd(n), nn = n()) |> 
+  mutate(forest_age = c(0, 3, 8, 13, 19, 50))
 richness_per_chrono_class
 
+
 #### making figure ####
-richnes_vs_forest_age <-ggplot(richness_per_chrono_class, aes(forest_chrono_class, richness_mean)) +
+richnes_vs_forest_age <-ggplot(richness_per_chrono_class, aes(forest_age, richness_mean)) +
   geom_pointrange(aes(ymin = richness_mean - richness_sd, ymax = richness_mean + richness_sd)) +
   geom_line() +
-  labs(y = "Species richness")
+  labs(y = "Species richness", x = "Forest age")
 richnes_vs_forest_age
