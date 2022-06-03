@@ -17,6 +17,8 @@ ants <- ants |>
 ants |> 
   distinct(species)
 
+
+#### tranforming data ####
 richness_per_chrono_class <- ants |> 
   group_by(site, forest_age, presence_absence, forest_chrono_class) |> 
   count() |>
@@ -25,7 +27,7 @@ richness_per_chrono_class <- ants |>
   summarise(richness_mean = mean(n), richness_sd = sd(n), nn = n(), forest_age)
 richness_per_chrono_class
 
-
+#### making figure ####
 richnes_vs_forest_age <-ggplot(richness_per_chrono_class, aes(forest_chrono_class, richness_mean)) +
   geom_pointrange(aes(ymin = richness_mean - richness_sd, ymax = richness_mean + richness_sd))
 richnes_vs_forest_age
