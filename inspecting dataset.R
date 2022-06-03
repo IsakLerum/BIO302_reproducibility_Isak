@@ -14,21 +14,17 @@ ants <- ants |>
   janitor::clean_names()
 ants <- ants |>
   select(site, presence_absence, species, forest_age, forest_chrono_class)
-ants |> 
-  view()
 
-richness_per_site <- ants |> 
+
+richness_per_chrono_class <- ants |> 
   group_by(site, forest_age, presence_absence, forest_chrono_class) |> 
   count() |> 
-  filter(presence_absence == 1)
-richness_per_site
-
-forest_ages_mean <- richness_per_site |> 
+  filter(presence_absence == 1) |> 
   group_by(forest_chrono_class) |> 
-  summarise(mean(n), sd(n), nn = n())
-forest_ages_mean
+  summarise(richness_mean = mean(n), richness_sd = sd(n), nn = n(), forest_age)
+richness_per_chrono_class
+
 
 richnes_vs_forest_age <-ggplot(richness_per_site, aes(forest_age, n)) +
-  geom_point() +
-  geom_line()
+  # geom_pointrange(aes(ymin = ))
 richnes_vs_forest_age
