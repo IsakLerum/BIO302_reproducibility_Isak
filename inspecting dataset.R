@@ -29,5 +29,7 @@ richness_per_chrono_class
 
 #### making figure ####
 richnes_vs_forest_age <-ggplot(richness_per_chrono_class, aes(forest_chrono_class, richness_mean)) +
-  geom_pointrange(aes(ymin = richness_mean - richness_sd, ymax = richness_mean + richness_sd))
+  geom_pointrange(aes(ymin = richness_mean - richness_sd, ymax = richness_mean + richness_sd)) +
+  geom_line() +
+  labs(y = "Species richness")
 richnes_vs_forest_age
