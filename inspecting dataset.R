@@ -18,7 +18,7 @@ ants |>
   distinct(species)
 
 
-#### tranforming data ####
+#### transforming data ####
 richness_per_chrono_class <- ants |> 
   group_by(site, forest_age, presence_absence, forest_chrono_class) |> 
   count() |>
