@@ -1,0 +1,13 @@
+---
+title: "References"
+format: html
+editor: visual
+---
+
+## Dataset
+
+Lawes, Michael J. et al. (2018), Data from: Ants as ecological indicators of rainforest restoration: community convergence and the development of an Ant Forest Indicator Index in the Australian wet tropics, Dryad, Dataset, <https://doi.org/10.5061/dryad.rs8vc>
+
+## Paper
+
+Lawes, MJ, Moore, AM, Andersen, AN, Preece, ND, Franklin, DC. Ants as ecological indicators of rainforest restoration: Community convergence and the development of an Ant Forest Indicator Index in the Australian wet tropics. *Ecol Evol*. 2017; 7: 8442-- 8455. <https://doi.org/10.1002/ece3.2992>
